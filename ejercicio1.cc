@@ -52,6 +52,20 @@ void createAlbum(Album &album)
     return;
 };
 
+void printAlbumInfo(const Album &album)
+{
+    std::cout << "\nAlbum: " << album.title << "\n";
+    std::cout << "Fecha de lanzamiento: " << album.release_year << "\n";
+    std::cout << "Nacionalidad: " << album.singer.nationality << "\n";
+    std::cout << "Artista: " << album.singer.name << "\n";
+    std::cout << "Edad: " << album.age << "\n";
+    std::cout << "Cantidad de canciones: " << album.songs.size() << "\n";
+
+    for (const auto &c : album.songs)
+    {
+        std::cout << "Id: " << c.first + 1 << " | Titulo: " << c.second << "\n";
+    }
+}
 
 
 int main()
@@ -59,6 +73,7 @@ int main()
 
     Album album;
     createAlbum(album); 
+    printAlbumInfo(album);
 
     return 0;
 }
